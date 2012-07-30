@@ -41,16 +41,20 @@ TARGET_SCORPION_BIONIC_PLDSIZE := 128
 
 # Wifi related defines
 WIFI_BAND                        := 802_11_ABG
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-BOARD_HOSTAPD_DRIVER             := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
-BOARD_WLAN_DEVICE                := bcmdhd
-WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcmdhd_apsta.bin"
-WIFI_DRIVER_FW_PATH_P2P          := "/vendor/firmware/fw_bcmdhd_p2p.bin"
-WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
+BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+WPA_SUPPLICANT_VERSION := VER_0_6_X
+# BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
+BOARD_HOSTAPD_DRIVER := WEXT
+# BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_wext
+BOARD_WLAN_DEVICE                := bcm4330
+WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/fw_bcm4330b2.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/firmware/fw_bcm4330b2_apsta.bin"
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcm4330/parameters/firmware_path"
+WIFI_DRIVER_MODULE_ARG           := "fwb1_path=/system/vendor/firmware/fw_bcm4330_apsta.bin fwb2_path=/system/vendor/firmware/fw_bcm4330b2_apsta.bin nvram_path=/proc/calibration iface_name=eth0"
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcm4330.ko"
+WIFI_DRIVER_MODULE_NAME		 := "bcm4330"
+WIFI_DRIVER_HAS_HTC_SOFTAP  := true
+
 # Audio
 COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
 TARGET_USES_QCOM_LPA := true
