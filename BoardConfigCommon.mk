@@ -41,10 +41,10 @@ TARGET_SCORPION_BIONIC_PLDSIZE := 128
 
 # Wifi related defines
 WIFI_BAND                        := 802_11_ABG
-BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION := VER_0_6_X
+BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
 # BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
-BOARD_HOSTAPD_DRIVER := WEXT
+BOARD_HOSTAPD_DRIVER             := WEXT
 # BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_wext
 BOARD_WLAN_DEVICE                := bcm4330
 WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/fw_bcm4330b2.bin"
@@ -53,7 +53,6 @@ WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcm4330/parameters/firmware_pat
 WIFI_DRIVER_MODULE_ARG           := "fwb1_path=/system/vendor/firmware/fw_bcm4330_apsta.bin fwb2_path=/system/vendor/firmware/fw_bcm4330b2_apsta.bin nvram_path=/proc/calibration iface_name=eth0"
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcm4330.ko"
 WIFI_DRIVER_MODULE_NAME		 := "bcm4330"
-WIFI_DRIVER_HAS_HTC_SOFTAP  := true
 
 # Audio
 COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
