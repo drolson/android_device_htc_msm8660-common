@@ -31,7 +31,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE -DNO_QCOM_MVS
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE
 
 # Scorpion optimizations
 TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
@@ -54,10 +54,6 @@ WIFI_DRIVER_MODULE_ARG           := "fwb1_path=/system/vendor/firmware/fw_bcm433
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcm4330.ko"
 WIFI_DRIVER_MODULE_NAME		 := "bcm4330"
 
-# Audio
-COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
-TARGET_USES_QCOM_LPA := true
-
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
@@ -75,8 +71,6 @@ TARGET_USES_OVERLAY := true
 TARGET_QCOM_HDMI_OUT := true
 TARGET_QCOM_HDMI_RESOLUTION_AUTO := true
 BOARD_EGL_CFG := device/htc/msm8660-common/configs/egl.cfg
-
-BOARD_HAVE_HTC_FFC := true
 
 # Filesystem
 BOARD_VOLD_MAX_PARTITIONS := 36

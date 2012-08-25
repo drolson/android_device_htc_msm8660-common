@@ -100,6 +100,10 @@ PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/prebuilt/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     device/htc/msm8660-common/prebuilt/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh
 
+# Media config
+PRODUCT_COPY_FILES += \
+    device/htc/msm8660-common/configs/media_profiles.xml:system/etc/media_profiles.xml
+
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
