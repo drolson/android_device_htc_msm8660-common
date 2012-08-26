@@ -89,12 +89,6 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
         system/extras/bugmailer/send_bug:system/bin/send_bug
 endif
 
-# 8660 Common Firmware
-PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw \
-    device/htc/msm8660-common/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
-    device/htc/msm8660-common/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw
-
 # Common Qualcomm scripts
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/prebuilt/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
