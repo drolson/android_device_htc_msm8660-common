@@ -31,7 +31,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE -DNO_QCOM_MVS
 
 # Scorpion optimizations
 TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
@@ -53,6 +53,10 @@ WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcm4330/parameters/firmware_pat
 WIFI_DRIVER_MODULE_ARG           := "fwb1_path=/system/vendor/firmware/fw_bcm4330_apsta.bin fwb2_path=/system/vendor/firmware/fw_bcm4330b2_apsta.bin nvram_path=/proc/calibration iface_name=eth0"
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcm4330.ko"
 WIFI_DRIVER_MODULE_NAME		 := "bcm4330"
+
+# Audio
+COMMON_GLOBAL_CFLAGS += -DWITH_QCOM_LPA
+TARGET_USES_QCOM_LPA := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
