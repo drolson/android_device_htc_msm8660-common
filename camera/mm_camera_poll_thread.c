@@ -125,7 +125,7 @@ static int32_t mm_camera_poll_proc_msm(mm_camera_poll_thread_t *poll_cb, struct 
         /*Checking for ctrl events*/
         if((poll_cb->data.poll_type == MM_CAMERA_POLL_TYPE_EVT) &&
            (fds[i].revents & POLLPRI)) {
-          CDBG("%s: mm_camera_msm_evt_notify\n", __func__);
+          //CDBG("%s: mm_camera_msm_evt_notify\n", __func__);
           mm_camera_msm_evt_notify(poll_cb->data.my_obj, fds[i].fd);
         }
 
