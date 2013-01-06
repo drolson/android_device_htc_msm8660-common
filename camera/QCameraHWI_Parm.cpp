@@ -905,7 +905,7 @@ void QCameraHardwareInterface::initDefaultParameters()
             mPreviewFormatValues.string());
 
     //Set Overlay Format
-    mParameters.set("overlay-format", HAL_PIXEL_FORMAT_YCbCr_420_SP);
+    mParameters.set("overlay-format", HAL_PIXEL_FORMAT_YCrCb_420_SP);
     mParameters.set("max-num-detected-faces-hw", "2");
 
     //Set Picture Size
@@ -2629,7 +2629,7 @@ status_t QCameraHardwareInterface::setAecAwbLock(const CameraParameters & params
 
 status_t QCameraHardwareInterface::setOverlayFormats(const CameraParameters& params)
 {
-    mParameters.set("overlay-format", HAL_PIXEL_FORMAT_YCbCr_420_SP);
+    mParameters.set("overlay-format", HAL_PIXEL_FORMAT_YCrCb_420_SP);
     if(mIs3DModeOn == true) {
        int ovFormat = HAL_PIXEL_FORMAT_YCrCb_420_SP|HAL_3D_IN_SIDE_BY_SIDE_L_R|HAL_3D_OUT_SIDE_BY_SIDE;
         mParameters.set("overlay-format", ovFormat);

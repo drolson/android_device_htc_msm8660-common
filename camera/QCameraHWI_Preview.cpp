@@ -753,7 +753,6 @@ status_t QCameraStream_preview::start()
     /* call start() in parent class to start the monitor thread*/
     //QCameraStream::start ();
     setFormat(MM_CAMERA_CH_PREVIEW_MASK);
-
     /* We do initDisplayBuffers only it's a clean start.
      * If preview is stopped because of taking picutre,
      * and resumed after snapshot is taken,

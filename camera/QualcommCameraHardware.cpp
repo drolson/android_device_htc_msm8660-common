@@ -1507,7 +1507,7 @@ QualcommCameraHardware::QualcommCameraHardware()
     mPreviewFormat             = CAMERA_YUV_420_NV21;
     mDimension.enc_format      = CAMERA_YUV_420_NV21;
     if((mCurrentTarget == TARGET_MSM7630) || (mCurrentTarget == TARGET_MSM8660))
-        mDimension.enc_format  = CAMERA_YUV_420_NV12;
+        mDimension.enc_format  = CAMERA_YUV_420_NV21;
     mDimension.main_img_format = CAMERA_YUV_420_NV21;
     mDimension.thumb_format    = CAMERA_YUV_420_NV21;
 
@@ -1804,7 +1804,7 @@ void QualcommCameraHardware::initDefaultParameters()
      }
     mParameters.setPreviewFrameRateMode("frame-rate-auto");
     mParameters.setPreviewFormat("yuv420sp"); // informative
-    mParameters.set("overlay-format", HAL_PIXEL_FORMAT_YCbCr_420_SP);
+    mParameters.set("overlay-format", HAL_PIXEL_FORMAT_YCrCb_420_SP);
     if(mIs3DModeOn){
       mParameters.setPictureSize(DEFAULT_PICTURE_WIDTH_3D, DEFAULT_PICTURE_HEIGHT_3D);
     } else{
@@ -3050,6 +3050,8 @@ void QualcommCameraHardware::runPreviewThread(void *data)
             // if the width is not multiple of 32,
             //we cannot do inplace conversion as sizes of 420sp and YV12 frames differ
             if(previewWidth%32){
+
+ALOGE("DREW THIS IS A FAILURE, WE NEED SOMETHING HERE");
 #if 0 //TODO :
                ALOGE("YV12::Doing not inplace conversion from 420sp to yv12");
                in_buf.imgPtr = (unsigned char*)mPreviewMapped[bufferIndex]->data;
